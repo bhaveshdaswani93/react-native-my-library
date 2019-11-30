@@ -24,8 +24,8 @@ public class MyLibraryPackage implements ReactPackage {
         return Collections.emptyList();
     }
 
-    @Override
-    public List<Class<? extends JavaScriptModule>> createJSModules() {
-        return null;
-    }
+//    @Override
+//    public List<Class<? extends JavaScriptModule>> createJSModules() {
+//        return Collections.emptyList();
+//    }
 }
