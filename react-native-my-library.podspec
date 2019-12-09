@@ -1,26 +1,20 @@
-require "json"
-
-package = JSON.parse(File.read(File.join(__dir__, "package.json")))
-
 Pod::Spec.new do |s|
-  s.name         = "react-native-my-library"
-  s.version      = package["version"]
-  s.summary      = package["description"]
+  s.name         = "RNBraintreeDropIn"
+  s.version      = "1.0.0"
+  s.summary      = "RNBraintreeDropIn"
   s.description  = <<-DESC
-                  react-native-my-library
+                  RNBraintreeDropIn
                    DESC
-  s.homepage     = "https://github.com/github_account/react-native-my-library"
+  s.homepage     = "https://github.com/bamlab/react-native-braintree-payments-drop-in"
   s.license      = "MIT"
-  # s.license    = { :type => "MIT", :file => "FILE_LICENSE" }
-  s.authors      = { "Your Name" => "yourname@email.com" }
-  s.platforms    = { :ios => "9.0" }
-  s.source       = { :git => "https://github.com/github_account/react-native-my-library.git", :tag => "#{s.version}" }
-
-  s.source_files = "ios/**/*.{h,m,swift}"
+  # s.license      = { :type => "MIT", :file => "../LICENSE" }
+  s.author             = { "author" => "lagrange.louis@gmail.com" }
+  s.platform     = :ios, "9.0"
+  s.source       = { :git => "https://github.com/bamlab/react-native-braintree-payments-drop-in.git", :tag => "master" }
+  s.source_files  = "*.{h,m}"
   s.requires_arc = true
 
   s.dependency "React"
-  # ...
-  # s.dependency "..."
+  s.dependency "BraintreeDropIn", '~> 7.4'
+  s.dependency "Braintree/Apple-Pay"
 end
-

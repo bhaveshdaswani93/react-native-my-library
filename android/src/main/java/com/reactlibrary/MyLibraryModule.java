@@ -40,6 +40,7 @@ public class MyLibraryModule extends ReactContextBaseJavaModule {
     public MyLibraryModule(ReactApplicationContext reactContext) {
         super(reactContext);
         this.reactContext = reactContext;
+        this.reactContext.addActivityEventListener(mActivityListener);
     }
 
     @Override
@@ -68,7 +69,7 @@ public class MyLibraryModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void show(final ReadableMap options, final Promise promise) {
+    public void openBraintree(final ReadableMap options,final Promise promise) {
         isVerifyingThreeDSecure = false;
 
         if (!options.hasKey("clientToken")) {
@@ -140,6 +141,7 @@ public class MyLibraryModule extends ReactContextBaseJavaModule {
     };
 
     private final void resolvePayment(PaymentMethodNonce paymentMethodNonce) {
+//        mPromise.reject("USER_CANCELLATION", "The user cancelled");
         WritableMap jsResult = Arguments.createMap();
         jsResult.putString("nonce", paymentMethodNonce.getNonce());
         jsResult.putString("type", paymentMethodNonce.getTypeLabel());
