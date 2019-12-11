@@ -8,7 +8,7 @@
 }
 RCT_EXPORT_MODULE()
 
-RCT_REMAP_METHOD(show,
+RCT_REMAP_METHOD(openBraintree,
                  showWithOptions:(NSDictionary*)options resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
     self.resolve = resolve;
